@@ -1,0 +1,58 @@
+{
+  "name": "antd-hooks-form2",
+  "version": "1.0.3",
+  "description": "antd-hooks-form2",
+  "main": "dist/utils.js",
+  "module": "dist/utils.es.ts",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "yarn clean && rollup -c",
+    "watch": "yarn clean && rollup -c -w",
+    "dev": "npm-run-all --parallel start watch",
+    "start": "serve public"
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "author": "chenxu",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/classnames": "^2.2.10",
+    "@types/react-resizable": "^1.7.2",
+    "antd": "^4.0.1",
+    "classnames": "^2.2.6",
+    "moment": "^2.24.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-hook-form": "^5.0.1",
+    "react-resizable": "^1.10.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.8.7",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-json": "^4.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "@types/react": "^16.9.23",
+    "babel-plugin-import": "^1.13.0",
+    "rollup": "^2.0.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-less": "^1.1.2",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.2",
+    "rollup-plugin-postcss": "^2.2.0",
+    "rollup-plugin-terser": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.26.0",
+    "rollup-plugin-url": "^3.0.1",
+    "typescript": "^3.8.3",
+    "utils-common-fn": "^1.0.2"
+  },
+  "peerDependencies": {
+    "antd": "^4.0.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-hook-form": "^4.8.2",
+    "react-resizable": "^1.10.1"
+  }
+}
