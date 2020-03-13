@@ -1,6 +1,6 @@
 {
   "name": "antd-hooks-form2",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "antd-hooks-form2",
   "main": "dist/utils.js",
   "module": "dist/utils.es.ts",
