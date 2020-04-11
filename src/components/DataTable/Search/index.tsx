@@ -30,7 +30,17 @@ const SearchList = (props: IPropsSearch) => {
     onSearch(data);
   };
   // 重置
-  const handReset = () => {};
+  const handReset = () => {
+    const allValues = getValues();
+    let _allValues = {};
+    Object.keys(allValues).forEach((l: string) => {
+      _allValues = {
+        ..._allValues, 
+        [l]: undefined
+      };
+    });
+    onSearch(_allValues);
+  };
 
   const commonButtons = () => {
     return (
@@ -65,16 +75,29 @@ const SearchList = (props: IPropsSearch) => {
       </Button>
     );
   };
+
   const is_show_more_btn = show_more_btn && (conditions.length > LIMITSEARCH || conditions.some(l => l.is_high));
+  
+  const loadConditions = () => {
+    if (!is_show_more_btn) {
+      return conditions;
+    } else if (!show_more_visible) {
+      return conditions.concat().splice(0, LIMITSEARCH);
+    } else {
+      return conditions;
+    }
+  }
+
   return (
     <FormContext {...methods}>
       <section className={classnames(style["form-search"])} style={styles}>
         <Form
+          defaultValues={defaultValues}
           data={[
-            ...conditions,
+            ...loadConditions(),
             {
               input_type: "Customize",
-              name: 'Customize',
+              name: "Customize",
               dom: (
                 <Fragment>
                   {is_show_more_btn && moreButtons()}

@@ -43,7 +43,6 @@ const SelectCompanent: React.FC<IProps> = props => {
     style: { width: "100%", ...style }
   };
 
-   console.log(value, "value", otherParams);
   if (!isArray(new_options)) {
     return <Group {...props_data} {...otherParams} />;
   }

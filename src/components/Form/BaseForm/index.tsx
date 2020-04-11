@@ -18,6 +18,8 @@ const BaseForm: React.FC<IProps> = props => {
     show_required = true,
     extend_text = "",
     is_required = 2,
+    label_width,
+    wrapper_width, 
     ...otherparams
   } = props;
 
@@ -36,9 +38,15 @@ const BaseForm: React.FC<IProps> = props => {
     return null;
   }
   return (
-    <div className="hooks-row hooks-form-item" key={name || new Date().getTime()}>
+    <div
+      className="hooks-row hooks-form-item"
+      key={name || new Date().getTime()}
+    >
       {!!label && (
-        <div className="hooks-col hooks-form-item-label">
+        <div
+          className="hooks-col hooks-form-item-label"
+          style={{ width: label_width }}
+        >
           <label htmlFor={name}>
             {show_required && (rules?.required || is_required === 1) && (
               <span className={styles.required}>*</span>
@@ -47,15 +55,20 @@ const BaseForm: React.FC<IProps> = props => {
           </label>
         </div>
       )}
-      <div className="hooks-col hooks-form-item-wrapper">
-        <Controller
+      <div
+        className="hooks-col hooks-form-item-wrapper"
+        style={{ width: wrapper_width }}
+      >
+        {input_type === 'Customize' ? <FormItem {...params} /> : <Controller
           as={<FormItem {...params} />}
           defaultValue={value}
           control={control}
           rules={rules}
           name={name}
-        />
-        <div className={styles.error}> {errors[name] && (errors[name] as any)["message"]}</div>
+        />}
+        <div className={styles.error}>
+          {errors[name] && (errors[name] as any)["message"]}
+        </div>
       </div>
     </div>
   );

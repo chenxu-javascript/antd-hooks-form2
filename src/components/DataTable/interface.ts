@@ -34,5 +34,6 @@ export interface IPropsSearch {
   is_view?: boolean;
   btnStyle?: React.CSSProperties;
   defaultValues?: any;
+  show_more_btn?: boolean;
   [propsName: string]: any;
 }

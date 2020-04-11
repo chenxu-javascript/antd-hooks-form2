@@ -4,10 +4,22 @@ import Table from "./Table";
 import { IProps } from "./interface";
 
 const DataTable: React.FC<IProps> = props => {
-  const { conditions, defaultValues, onSearch, columns, data } = props;
+  const {
+    conditions,
+    defaultValues,
+    onSearch,
+    columns,
+    data,
+    show_more_btn
+  } = props;
   return (
     <Fragment>
-      <Search conditions={conditions} defaultValues={defaultValues} onSearch={onSearch} />
+      <Search
+        conditions={conditions}
+        defaultValues={defaultValues}
+        onSearch={onSearch}
+        show_more_btn={show_more_btn}
+      />
       <Table columns={columns} dataSource={data} />
     </Fragment>
   );

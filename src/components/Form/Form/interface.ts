@@ -1,5 +1,5 @@
 interface IProps {
-  data?: any;
+  data: any[];
   children?: React.ReactNode;
   defaultValues?: any;
   layout?: any;

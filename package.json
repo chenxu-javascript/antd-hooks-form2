@@ -53,6 +53,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-hook-form": "^4.8.2",
-    "react-resizable": "^1.10.1"
+    "react-resizable": "^1.10.1",
+    "utils-common-fn": "^1.0.2"
   }
 }

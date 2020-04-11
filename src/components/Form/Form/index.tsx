@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 // import { useForm, FormContext } from "react-hook-form";
 import HooksItem from "./../HooksItem";
 import IProps from "./interface";
@@ -16,11 +16,13 @@ const Form: React.FC<IProps> = props => {
   } = props;
   const renderForm = () => {
     return (
-      <>
+      <Fragment>
         {data.map((l: any, index: number) => {
-          return <HooksItem key={index} item={l} defaultValue={defaultValues} />;
+          return (
+            <HooksItem key={index} item={l} defaultValue={defaultValues} />
+          );
         })}
-      </>
+      </Fragment>
     );
   };
   const className = `hooks-form hooks-form-${layout} label-${labelAlign} ${
